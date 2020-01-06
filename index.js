@@ -68,7 +68,7 @@ app.get("/", (req, res) => {
 
 
 /**
-* Step 8: Set your link data routes
+* Step 8: Set your posts routes
 **/
 
 
