@@ -17,11 +17,11 @@ const postSchema = new Schema({
   },
   "createdBy_username": {
     type: String,
-    required: true
+    required: false
   },
   "createdBy_id": {
     type: String,
-    required: true
+    required: false
   }
 }, {
   timestamps: {
