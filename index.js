@@ -76,7 +76,8 @@ app.use('/api/v1/posts', postRoutes)
 /**
 * Step 9: Set your user routes
 **/
-
+const userRoutes = require('./routes/users')
+app.use('/api/v1/users', userRoutes);
 
 /**
 * Step 7: create and fire up your server

@@ -5,8 +5,8 @@ const db = require('../models/posts.js');
 /** 
 * TODO: Authentication middleware - We will defined these later and then uncomment them!!! Just note that we will come back to these one our authentication has been set up and defined.
 **/
-// const auth = require('../middleware/auth');
-// const isOwner = require('../middleware/isOwner');
+const auth = require('../middleware/auth');
+const isOwner = require('../middleware/isOwner');
 
 // --- Does not require authentication ---
 // GET
@@ -32,7 +32,7 @@ api.get('/:id', async(req, res, next) => {
 
 // --- Requires authentication ---
 // POST
-api.post('/', async (req, res, next) => {
+api.post('/', auth, async (req, res, next) => {
 try {
     const formattedData = {
       ...req.body,
@@ -48,7 +48,7 @@ try {
 })
 
 // PUT
-api.put('/:id', async (req, res, next) => {
+api.put('/:id', auth, isOwner, async (req, res, next) => {
   try {
     
     const id = req.params.id;
@@ -65,7 +65,7 @@ api.put('/:id', async (req, res, next) => {
 
 
 // DELETE
-api.delete('/:id', async (req, res, next) => {
+api.delete('/:id', auth, isOwner, async (req, res, next) => {
   try {
     const id = req.params.id;
 
