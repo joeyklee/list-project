@@ -1,4 +1,4 @@
-const Location = require('../models/posts');
+const Location = require('../models/post');
 const isOwner = async (req, res, next) => {
   try{
     const id = req.params.id; // typeof req.params.id === String ? req.params.id : null;

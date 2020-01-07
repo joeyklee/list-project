@@ -1,11 +1,11 @@
 const express = require('express');
 const api = express.Router();
-const User = require('../models/users.js');
+const User = require('../models/user');
 const auth = require('../middleware/auth');
 const scrub = require('../middleware/scrub');
 
 
-// for emailer
+// for emailerå
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const config = require('../config');

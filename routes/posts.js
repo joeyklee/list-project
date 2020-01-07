@@ -1,6 +1,6 @@
 const express = require('express');
 const api = express.Router();
-const db = require('../models/posts.js');
+const db = require('../models/post');
 
 /** 
 * TODO: Authentication middleware - We will defined these later and then uncomment them!!! Just note that we will come back to these one our authentication has been set up and defined.
