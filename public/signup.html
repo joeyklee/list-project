@@ -6,29 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>List Project - Sign up </title>
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="images/favicon.png" />
   </head>
 
   <body>
-    <div class="container">
-      <section class="login__section">
-        <h1>Signup - List Project</h1>
-        <form class="signup__form">
-          <fieldset>
-            <legend>username</legend>
-            <input type="text" name="username" placeholder="RainbowLover">
+    <div class="auth-container">
+      <section class="auth__section">
+        <h1 class="auth__section__title">Signup - List Project</h1>
+        <form class="auth_form signup__form">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">username</legend>
+            <input class="auth__form__section__input" type="text" name="username" placeholder="RainbowLover">
           </fieldset>
-          <fieldset>
-            <legend>email</legend>
-            <input type="email" name="email" placeholder="e.g. youremail@mail.com">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">email</legend>
+            <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
           </fieldset>
-          <fieldset>
-            <legend>password</legend>
-            <input type="password" name="password" placeholder="e.g. super_secret_password">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">password</legend>
+            <input class="auth__form__section__input" type="password" name="password" placeholder="e.g. super_secret_password">
           </fieldset>
           <input type="submit" value="signup">
         </form>
       </section>
+      <a class="auth-container__link" href="/">back home ↩</a>
     </div>
     <script src="js/Signup.js"></script>
     <script>

@@ -6,36 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>List Project - Log in</title>
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="images/favicon.png" />
   </head>
 
   <body>
-    <div class="container">
-      <section class="login__section">
-        <h1>Login - List Project</h1>
-        <form class="login__form">
-          <fieldset>
-            <legend>email</legend>
-            <input type="email" name="email" placeholder="e.g. youremail@mail.com">
+    <div class="auth-container">
+      <section class="auth__section">
+        <h2 class="auth__section__title">Login - List Project</h2>
+        <form class="auth_form login__form">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">email</legend>
+            <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
           </fieldset>
-          <fieldset>
-            <legend>password</legend>
-            <input type="password" name="password" placeholder="e.g. super_secret_password">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">password</legend>
+            <input class="auth__form__section__input" type="password" name="password" placeholder="e.g. super_secret_password">
           </fieldset>
           <input type="submit" value="login">
         </form>
       </section>
 
-      <section class="forgot__section">
-        <h2>Forgot password - List Project</h2>
-        <form class="forgot__form">
-          <fieldset>
-            <legend>email</legend>
-            <input type="email" name="email" placeholder="e.g. youremail@mail.com">
+      <section class="auth__section">
+        <h2 class="auth__section__title">Forgot password - List Project</h2>
+        <form class="auth_form forgot__form">
+          <fieldset class="auth__form__section">
+            <legend class="auth__form__section__title">email</legend>
+            <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
           </fieldset>
           <input type="submit" value="submit password reset">
         </form>
       </section>
+
+      <a class="auth-container__link" href="/">back home ↩</a>
     </div>
 
     <script src="js/Login.js"></script>
