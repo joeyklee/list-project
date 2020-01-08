@@ -7,6 +7,7 @@ const auth = async (req, res, next) => {
   try{
 
     let token;
+    console.log(req)
 
     if(req.cookies.auth_token ){
       token = req.cookies.auth_token;
@@ -16,6 +17,7 @@ const auth = async (req, res, next) => {
       throw new Error('no token given')
     }
 
+    
 
     const data = jwt.verify(token, config.JWT_KEY)
     const user = await User.findOne({_id: data._id, 'tokens.token':token})

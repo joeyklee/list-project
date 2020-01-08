@@ -36,8 +36,8 @@ api.post('/', auth, async (req, res, next) => {
 try {
     const formattedData = {
       ...req.body,
-      // createdBy_username: req.user.username,
-      // createdBy_id: req.user._id,
+      createdBy_username: req.user.username,
+      createdBy_id: req.user._id,
     }
 
     const newData = await db.create(formattedData)

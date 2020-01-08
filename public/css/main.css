@@ -190,6 +190,10 @@ body{
   padding: 0.5rem;
 }
 
+.section__view__post:not(:last-child){
+  margin-bottom: 1rem;
+}
+
 .section__view__post__title{
   padding:0rem 0.5rem 0.5rem 0.5rem;
 }

@@ -32,12 +32,13 @@ class Posts {
         e.preventDefault();
 
         const editData = {
-          title: this.postEditForm.title,
-          link: this.postEditForm.link,
-          description: this.postEditForm.description,
+          title: this.postEditForm.title.value,
+          link: this.postEditForm.link.value,
+          description: this.postEditForm.description.value,
+          id: this.postEditForm.id.value,
         }
         await this.handleEditPost(editData);  
-        await updateView();
+        await this.updateView();
       } catch (error) {
         alert(error);
       }
@@ -49,12 +50,12 @@ class Posts {
         e.preventDefault();
 
         const newData = {
-          title: this.postNewForm.title,
-          link: this.postNewForm.link,
-          description: this.postNewForm.description,
+          title: this.postNewForm.title.value,
+          link: this.postNewForm.link.value,
+          description: this.postNewForm.description.value,
         }
         await this.handleNewPost(newData);  
-        await updateView();
+        await this.updateView();
       } catch (error) {
         alert(error);
       }
@@ -91,16 +92,16 @@ class Posts {
   async handleDeletePost(id){
     try {
       const options = {
-        method: 'POST',
-        credentials: "same-origin"
+        method: 'DELETE',
+        credentials: "same-origin",
       }
       const deleteUrl = `${this.postsURL}/${id}`
       let data = await fetch(deleteUrl, options)
       data = await data.json();
-
+      await this.updateView();
       alert(data.message);
     } catch (err) {
-      alert(err);
+      console.log(err)
       throw new Error(err);
     }
   }
@@ -123,14 +124,18 @@ class Posts {
     try {
       const options = {
         method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         credentials: "same-origin",
         body: JSON.stringify(formData)
       }
-      const editUrl = `${this.postsUrl}/${id}`
+      const editUrl = `${this.postsURL}/${formData.id}`
       let data = await fetch(editUrl, options)
       data = await data.json();
 
-      alert(data.message);
+      alert('post successfully updated');
     } catch (err) {
       alert(err);
       throw new Error(err);
@@ -145,14 +150,16 @@ class Posts {
     try {
       const options = {
         method: 'POST',
-        credentials: "same-origin",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        credentials: "include",
         body: JSON.stringify(formData)
       }
-      const editUrl = `${this.postsUrl}`
-      let data = await fetch(editUrl, options)
+      let data = await fetch(this.postsURL, options)
       data = await data.json();
-
-      alert(data.message);
+      console.log(data);
     } catch (err) {
       alert(err);
       throw new Error(err);
