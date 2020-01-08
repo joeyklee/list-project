@@ -158,7 +158,7 @@ api.post('/auth/forgot_password', async (req, res) => {
         <div>
         <h1>Password reset for list project</h1>
         <p>
-          url: http://localhost:8080/reset_password?token=${token}
+          url: http://localhost:3030/reset_password?token=${token}
           name: ${user.username}
         </p>
         </div>
