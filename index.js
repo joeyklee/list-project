@@ -66,6 +66,19 @@ app.get("/", (req, res) => {
   res.sendFile('/')
 })
 
+// login
+app.get("/login", (req, res) => {
+  res.sendFile(publicPath + '/login.html')
+})
+// signup
+app.get("/signup", (req, res) => {
+  res.sendFile(publicPath + '/signup.html')
+})
+// reset_password
+app.get("/reset_password", (req, res) => {
+  res.sendFile(publicPath + '/reset_password.html')
+})
+
 
 /**
 * Step 8: Set your posts routes

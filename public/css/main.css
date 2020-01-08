@@ -1,0 +1,268 @@
+:root {
+  --primary-color-font: #D5008F;
+  --header-bg: #FFD700;
+  /* --: #9EEBCF; */
+}
+
+/* General */
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  width:100%;
+  height:100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  width:100%;
+  height:100%;
+  font-size: 16px;
+}
+
+/* Layout */
+#app{
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 3rem 20rem 1fr;
+  grid-row-gap: 0.5rem;
+}
+
+/* Navigation */
+.nav{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9EEBCF;
+  /* border: 1px solid black; */
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__list--left{
+  padding-left:0.5rem;
+}
+.nav__list--right{
+  padding-right:0.5rem;
+}
+
+.nav__list__item:not(:last-child) {  
+  margin-right:1rem;
+}
+
+.nav__list__item > .link, .link:visited, .link:link{
+  color: #D5008F;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.4ch;
+  font-size:0.8rem;
+  font-weight: bold;
+}
+
+
+/* Header */
+.header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding:0.5rem;
+  background-color:#FFD700;
+  color: #D5008F;
+}
+.header__title{
+  font-size: 3rem;
+}
+.header__subtitle{
+  font-size: 1.5rem;
+  margin-top:1rem;
+  max-width: 30rem;
+}
+
+/* main */
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 1rem;
+}
+
+/* section__submit */
+.section__submit {
+  width:100%;
+  padding:0.5rem;
+}
+
+.section__submit--edit{
+  background-color:#E8FDF5;
+}
+
+.section__submit__title{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.section__submit__title--edit{
+  color:var(--primary-color-font);
+}
+
+.link__form{
+  margin-top: 1rem;
+}
+
+
+.link__form__section {
+  width:100%;
+  padding:0.5rem;
+  border:1px solid #F4f4f4;
+}
+
+.link__form__section:not(:last-child){
+  margin-bottom:0.25rem;
+}
+
+.link__form__section__title{
+  padding: 0 0.5rem;
+  font-size:0.8rem;
+}
+
+.link__form__section__input{
+  width:100%;
+  padding:0.5rem;
+}
+
+.link__form__section__input--text{
+  height: 2rem;
+  background-color: #F4F4F4;
+  border:none;
+}
+
+.link__form__section__input--textarea{
+  height:6rem;
+  background-color: #F4F4F4;
+  border:none;
+}
+
+.link__form__section__input--button{
+  height:2rem;
+  border:1px solid var(--primary-color-font);
+  outline:none;
+  margin-top:0.5rem;
+  background-color: var(--primary-color-font);
+  color: var(--header-bg);
+}
+
+.link__form__section__input--button--edit{
+  background-color: #001B44;
+  border:1px solid #001B44;
+}
+
+/* section__view */
+
+.section__view{
+  width:100%;
+  background-color: #CDECFF;
+  padding: 0.5rem;
+}
+
+.section__view__title{
+  font-size: 1rem;
+  text-align: center; 
+}
+
+.section__view__posts{
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.section__view__post{
+  border:1px solid var(--primary-color-font);
+  padding: 0.5rem;
+}
+
+.section__view__post__title{
+  padding:0rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.section__view__post__description{
+  padding:0.5rem;
+  background-color: #F4f4f4;
+  font-size:0.8rem;
+  color: var(--primary-color-font);
+}
+
+.section__view__post__meta{
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:0.5rem;
+  padding:0 0.5rem;
+}
+
+.section__view__post__meta__section{
+  height:100%;
+}
+
+
+.section__view__post__meta__section:not(:last-child){
+  margin-right:0.4rem;
+}
+
+.section__view__post__meta__username{
+  font-size:0.6rem;
+  color:var(--primary-color-font);
+}
+
+.section__view__post__link--large{
+  font-size:1.2rem;
+  text-decoration: none;
+  color:var(--primary-color-font);
+}
+
+.section__view__post__link--small{
+  font-size:0.6rem;
+  color:var(--primary-color-font);
+}
+
+.section__view__post__meta__link{
+  display: flex;
+  font-size:0.6rem;
+  color:var(--primary-color-font);
+}
+
+.section__view__post__functions{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section__view__post__button{
+  outline:none;
+  border: none;
+  padding:0.25rem 0.5rem;
+  color: #F4F4F4;
+}
+
+.section__view__post__button:not(:last-child){
+  margin-right:0.2rem;
+}
+
+.section__view__post__button--edit{
+  background-color:#9EEBCF;
+  color:#001B44;
+}
+.section__view__post__button--delete{
+  background-color:#FFD700;
+  color:#001B44;
+}

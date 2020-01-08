@@ -12,6 +12,124 @@
   </head>
 
   <body>
+    <div id="app">
+    <!-- 
+      * Section: Navigation 
+      * includes any URLs to other pages
+    -->
+    <nav class="nav">
+      <ul class="nav__list nav__list--left">
+        <li class="nav__list__item"> <a class="link" href="/">Home</a></li>
+      </ul>
+      <ul class="nav__list nav__list--right">
+        <li class="nav__list__item"> <a class="link" href="/login">login</a></li>
+        <li class="nav__list__item"> <a class="link" href="/signup">signup</a></li>
+      </ul>
+    </nav>
+    
+    <!-- 
+      * Section: header 
+      * includes the h1 and subtitle
+    -->
+    <header class="header">
+      <h1 class="header__title">The List Project</h1>
+      <h2 class="header__subtitle">Behold! Links from across the web!</h2>
+    </header>
+
+    
+    <!-- 
+      * Section: main 
+      * this is where your posts will go
+    -->
+    <main class="main">
+
+      <!-- Part 1: a form to submit new posts if authenticate -->
+      <section class="section__submit">
+        <div class="section__submit section__submit--new">
+          <h3 class="section__submit__title">· Add New ·</h3>
+          <form class="link__form link__form--new">
+            <!-- input for link -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">link</legend>
+              <input class="link__form__section__input link__form__section__input--text" type="text" name="link" placeholder="e.g. https://itp.nyu.edu">
+            </fieldset>
+            <!-- input for title -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">title</legend>
+              <input class="link__form__section__input link__form__section__input--text" type="text" name="title" placeholder="e.g. ITP Homepage website">
+            </fieldset>
+            <!-- input for description -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">description</legend>
+              <textarea class="link__form__section__input link__form__section__input--textarea" name="description" placeholder="e.g. ITP is a grad school program about the recently possible."></textarea>  
+            </fieldset>
+            <input class="link__form__section__input link__form__section__input--button" type="submit" value="🚀 share this link">
+          </form>
+        </div>
+
+        <div class="section__submit section__submit--edit">
+          <h3 class="section__submit__title section__submit__title--edit">· Edit Post ·</h3>
+          <form class="link__form link__form--edit">
+            <!-- input for link -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">link</legend>
+              <input class="link__form__section__input link__form__section__input--text" type="text" name="link" placeholder="e.g. https://itp.nyu.edu">
+            </fieldset>
+            <!-- input for title -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">title</legend>
+              <input class="link__form__section__input link__form__section__input--text" type="text" name="title" placeholder="e.g. ITP Homepage website">
+            </fieldset>
+            <!-- input for description -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">description</legend>
+              <textarea class="link__form__section__input link__form__section__input--textarea" name="description" placeholder="e.g. ITP is a grad school program about the recently possible."></textarea>  
+            </fieldset>
+            <!-- input for id -->
+            <fieldset class="link__form__section">
+              <legend class="link__form__section__title">id</legend>
+              <input class="link__form__section__input link__form__section__input--text" type="text" name="id" placeholder="e.g. id">
+            </fieldset>
+            <input class="link__form__section__input link__form__section__input--button link__form__section__input--button--edit" type="submit" value="✨ update this link">
+          </form>
+        </div>
+      </section>
+
+      <!-- part 2: list of all the posts -->
+      <section class="section__view">
+        <h3 class="section__view__title">· All Posts ·</h3>
+        <ul class="section__view__posts">
+          <!-- this is where your posts will be filled in with javascript -->
+          <!-- <li class="section__view__post">
+            <div class="section__view__post__functions">
+              <button>edit</button>
+              <button>delete</button>
+            </div>
+            <h4 class="section__view__post__title">
+              <a href="{{URL}}" target="_blank" rel="noreferrer" 
+                class="section__view__post__link section__view__post__link--large">
+                {{title with link}}
+              </a>
+            </h4>
+            <p class="section__view__post__description">
+              {{link description}}
+            </p>
+            <ul class="section__view__post__meta">
+              <li class="section__view__post__meta__section section__view__post__meta__username">Submitted by: {{name}}</li>
+              <li class="section__view__post__meta__section section__view__post__meta__link">
+                <a href="{{URL}}" class="section__view__post__link--small">{{https://itp.nyu.edu}}</a>
+              </li>
+            </ul>
+          </li> -->
+        </ul>
+      </section>
+
+    </main>
+
+
+    </div>
+    <!-- JS Scripts -->
+    <script src="js/Posts.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
