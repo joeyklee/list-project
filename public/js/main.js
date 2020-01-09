@@ -1,1 +1,6 @@
-console.log('hello lovely human')
+window.addEventListener("DOMContentLoaded", function(){
+  console.log('hello lovely human');
+  const posts = new Posts();
+  const login = new Login();
+  const signup = new Signup();
+});
