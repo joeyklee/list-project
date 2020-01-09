@@ -39,7 +39,7 @@ class ResetPassword {
       data = await data.json();
       // after signup up send the user to the home page
       alert(data.message);
-      window.location.href = '/login';
+      window.location.href = '/';
     } catch (error) {
       alert(error);
     }

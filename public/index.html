@@ -13,132 +13,225 @@
 
   <body>
     <div id="app">
-    <!-- 
-      * Section: Navigation 
-      * includes any URLs to other pages
-    -->
-    <nav class="nav">
-      <ul class="nav__list nav__list--left">
-        <li class="nav__list__item"> <a class="link" href="/">Home</a></li>
-      </ul>
-      <ul class="nav__list nav__list--right">
-        <li class="nav__list__item"> <a class="link" href="/signup">signup</a></li>
-      </ul>
-    </nav>
-    
-    <!-- 
-      * Section: header 
-      * includes the h1 and subtitle
-    -->
-    <header class="header">
-      <section class="header__login">
-          <!-- login section -->
-          <section class="header__login__section">
-          <h3 class="login__section__title">Login</h3>
-          <form class="auth_form login__form">
-            <fieldset class="auth__form__section">
-              <legend class="auth__form__section__title">email</legend>
-              <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
-            </fieldset>
-            <fieldset class="auth__form__section">
-              <legend class="auth__form__section__title">password</legend>
-              <input class="auth__form__section__input" type="password" name="password" placeholder="e.g. super_secret_password">
-            </fieldset>
-            <input class="auth__form__section__button" type="submit" value="login">
-          </form>
+      <header class="header">
+        <h1 class="header__title">
+          <a class="header__title-link" href="/">The Friendly List Project 🗒</a>
+        </h1>
+      </header>
+
+      <main class="main">
+        <!-- edit -->
+        <aside class="editor">
+          <section class="editor__post-editor">
+            <h3 class="editor__post-editor__title">Select a Post & Edit</h3>
+            <form class="post__form post__form--edit">
+              <!-- input for link -->
+              <fieldset class="post__form__section">
+                <legend class="post__form__section__title">link</legend>
+                <input
+                  class="post__form__section__input post__form__section__input--text"
+                  type="text"
+                  name="link"
+                  placeholder="e.g. https://itp.nyu.edu"
+                />
+              </fieldset>
+              <!-- input for title -->
+              <fieldset class="post__form__section">
+                <legend class="post__form__section__title">title</legend>
+                <input
+                  class="post__form__section__input post__form__section__input--text"
+                  type="text"
+                  name="title"
+                  placeholder="e.g. ITP Homepage website"
+                />
+              </fieldset>
+              <!-- input for description -->
+              <fieldset class="post__form__section">
+                <legend class="post__form__section__title">description</legend>
+                <textarea
+                  class="post__form__section__input post__form__section__input--textarea"
+                  name="description"
+                  placeholder="e.g. ITP is a grad school program about the recently possible."
+                ></textarea>
+              </fieldset>
+              <!-- input for id -->
+              <fieldset class="post__form__section">
+                <legend class="post__form__section__title">id</legend>
+                <input
+                  class="post__form__section__input post__form__section__input--text"
+                  type="text"
+                  name="id"
+                  placeholder="e.g. id"
+                />
+              </fieldset>
+              <input
+                class="post__form__section__input post__form__section__input--button post__form__section__input--button--edit"
+                type="submit"
+                value="✨ update this link"
+              />
+            </form>
+          </section>
+        </aside>
+        <!-- main -->
+        <section class="posts">
+          <!-- posts submit -->
+          <section class="posts__submit">
+            <div class="posts__submit__avatar">
+              <img
+                class="posts__submit__avatar__img"
+                src="assets/apple-openmoji-1F34E_color.png"
+              />
+            </div>
+            <form class="post__form post__form--new">
+              <p class="post__form__prompt">
+                Hello world! <br />
+                I'd like to share this link,
+                <input
+                  class="post__form__input post__form__input--text"
+                  type="text"
+                  name="link"
+                  placeholder="climate.nasa.gov"
+                />
+                from the internet about
+                <input
+                  class="post__form__input post__form__input--text"
+                  type="text"
+                  name="title"
+                  placeholder="Global Climate Change"
+                />. I think it is interesting because it:
+                <input
+                  class="post__form__input post__form__input--text post__form__input--text--long"
+                  type="text"
+                  name="description"
+                  placeholder="shows the current state of the world's climate"
+                />.
+              </p>
+              <input
+                class="post__form__input--button"
+                type="submit"
+                value="❤️ Share"
+              />
+            </form>
+          </section>
+          <!-- posts view -->
+          <section class="posts__view">
+            <h3 class="posts__view__title">· All Posts ·</h3>
+            <ul class="posts__view__posts">
+              <!-- this is where your posts will be filled in with javascript -->
+            </ul>
+          </section>
         </section>
-        <!-- forgot password -->
-        <section class="header__login__section">
-          <form class="auth_form forgot__form">
-            <fieldset class="auth__form__section">
-              <legend class="auth__form__section__title">forgot password: email</legend>
-              <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
-            </fieldset>
-            <input class="auth__form__section__button" type="submit" value="submit password reset">
-          </form>
-        </section>
-      </section>
-      <section class="header__main">
-        <h1 class="header__title">The List Project</h1>
-        <h2 class="header__subtitle">Behold! Links from across the web!</h2>
-        <p class="header__description">The list project is user driven platform that stores links submitted by community members in one really long list by chronological order. No fancy content hoisting algorithms to be found here!</p>
-      </section>
-    </header>
+        <!-- nav -->
+        <nav class="nav">
+          <section class="nav__section nav__section-description">
+            <p class="nav__section-description-text">
+              <span>About:</span> The Friendly List Project is an open source
+              project built to allow friends to publicly share links with
+              eachother. Learn more about how and why this was built at this
+              <a href="#">tutorial link</a>.
+            </p>
+          </section>
+          <!-- login -->
+          <section class="nav__section nav__section-login">
+            <h2 class="nav__section__title">Login</h2>
+            <section class="nav__section-login__login">
+              <form class="auth__form login__form">
+                <fieldset class="auth__form__section login__form__section">
+                  <legend class="auth__form__title">email</legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="email"
+                    name="email"
+                    placeholder="yourEmail@email.com"
+                  />
+                </fieldset>
+                <fieldset class="auth__form__section login__form__section">
+                  <legend class="auth__form__title">password</legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="password"
+                    name="password"
+                    placeholder="super_secret_password"
+                  />
+                </fieldset>
+                <input
+                  class="auth__form__input-button"
+                  type="submit"
+                  value="login"
+                />
+              </form>
+            </section>
+            <section class="nav__section-login__forgot">
+              <form class="auth_form forgot__form">
+                <fieldset class="auth__form__section">
+                  <legend class="auth__form__title">
+                    forgot password: email
+                  </legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="email"
+                    name="email"
+                    placeholder="e.g. youremail@mail.com"
+                  />
+                </fieldset>
+                <input
+                  class="auth__form__input-button"
+                  type="submit"
+                  value="submit password reset"
+                />
+              </form>
+            </section>
+          </section>
 
-    
-    <!-- 
-      * Section: main 
-      * this is where your posts will go
-    -->
-    <main class="main">
-
-      <!-- Part 1: a form to submit new posts if authenticate -->
-      <section class="section__submit">
-        <div class="section__submit section__submit--new">
-          <h3 class="section__submit__title">· Add New ·</h3>
-          <form class="link__form link__form--new">
-            <!-- input for link -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">link</legend>
-              <input class="link__form__section__input link__form__section__input--text" type="text" name="link" placeholder="e.g. https://itp.nyu.edu">
-            </fieldset>
-            <!-- input for title -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">title</legend>
-              <input class="link__form__section__input link__form__section__input--text" type="text" name="title" placeholder="e.g. ITP Homepage website">
-            </fieldset>
-            <!-- input for description -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">description</legend>
-              <textarea class="link__form__section__input link__form__section__input--textarea" name="description" placeholder="e.g. ITP is a grad school program about the recently possible."></textarea>  
-            </fieldset>
-            <input class="link__form__section__input link__form__section__input--button" type="submit" value="🚀 share this link">
-          </form>
-        </div>
-
-        <div class="section__submit section__submit--edit">
-          <h3 class="section__submit__title section__submit__title--edit">· Edit Post ·</h3>
-          <form class="link__form link__form--edit">
-            <!-- input for link -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">link</legend>
-              <input class="link__form__section__input link__form__section__input--text" type="text" name="link" placeholder="e.g. https://itp.nyu.edu">
-            </fieldset>
-            <!-- input for title -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">title</legend>
-              <input class="link__form__section__input link__form__section__input--text" type="text" name="title" placeholder="e.g. ITP Homepage website">
-            </fieldset>
-            <!-- input for description -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">description</legend>
-              <textarea class="link__form__section__input link__form__section__input--textarea" name="description" placeholder="e.g. ITP is a grad school program about the recently possible."></textarea>  
-            </fieldset>
-            <!-- input for id -->
-            <fieldset class="link__form__section">
-              <legend class="link__form__section__title">id</legend>
-              <input class="link__form__section__input link__form__section__input--text" type="text" name="id" placeholder="e.g. id">
-            </fieldset>
-            <input class="link__form__section__input link__form__section__input--button link__form__section__input--button--edit" type="submit" value="✨ update this link">
-          </form>
-        </div>
-      </section>
-
-      <!-- part 2: list of all the posts -->
-      <section class="section__view">
-        <h3 class="section__view__title">· All Posts ·</h3>
-        <ul class="section__view__posts">
-          <!-- this is where your posts will be filled in with javascript -->
-        </ul>
-      </section>
-
-    </main>
-
-
+          <!-- signup -->
+          <section class="nav__section nav__section-signup">
+            <h2 class="nav__section__title nav__section__title--light">
+              Sign up
+            </h2>
+            <section class="nav__section-signup__signup">
+              <form class="auth__form signup__form">
+                <fieldset class="auth__form__section login__form__section">
+                  <legend class="auth__form__title">username</legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="text"
+                    name="username"
+                    placeholder="RainbowLover"
+                  />
+                </fieldset>
+                <fieldset class="auth__form__section login__form__section">
+                  <legend class="auth__form__title">email</legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="email"
+                    name="email"
+                    placeholder="yourEmail@email.com"
+                  />
+                </fieldset>
+                <fieldset class="auth__form__section signup__form__section">
+                  <legend class="auth__form__title">password</legend>
+                  <input
+                    class="auth__form__input-text"
+                    type="password"
+                    name="password"
+                    placeholder="super_secret_password"
+                  />
+                </fieldset>
+                <input
+                  class="auth__form__input-button"
+                  type="submit"
+                  value="login"
+                />
+              </form>
+            </section>
+          </section>
+        </nav>
+      </main>
     </div>
     <!-- JS Scripts -->
     <script src="js/Posts.js"></script>
     <script src="js/Login.js"></script>
+    <script src="js/Signup.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

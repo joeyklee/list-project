@@ -5,9 +5,9 @@ class Posts {
     // posts base api url
     this.postsURL = "http://localhost:3030/api/v1/posts";
     // query selectors
-    this.postsList = document.querySelector('.section__view__posts');
-    this.postEditForm = document.querySelector('.link__form--edit');
-    this.postNewForm = document.querySelector('.link__form--new');
+    this.postsList = document.querySelector('.posts__view__posts');
+    this.postEditForm = document.querySelector('.post__form--edit');
+    this.postNewForm = document.querySelector('.post__form--new');
 
     // initialize the event listeners
     this.init();
@@ -78,7 +78,7 @@ class Posts {
     try{
       let data = await fetch(this.postsURL);
       data = await data.json();
-      this.posts = data;
+      this.posts = data.reverse();
       return data;
     }catch(err){
       throw new Error(err);
