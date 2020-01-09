@@ -291,6 +291,16 @@ hr{
   border-radius: 4px;
 }
 
+.nav__section-logout{
+  padding:0.5rem;
+  border-radius:4px;
+  text-align:right;
+}
+
+.nav__section-logout__text{
+  font-size:0.8rem;
+}
+
 /* post__view */
 
 .posts__view__list__item{
@@ -370,4 +380,30 @@ hr{
 
 .posts__view__list-item__meta-section:not(:last-child){
   margin-right:0.4rem;
+}
+
+
+/* reset */
+.reset{
+  width:100%;
+  height:100%;
+  padding:0.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  background-color:var(--grey-1);
+}
+
+.reset__section{
+  width:20rem;
+  border:2px solid var(--navy);
+  padding:0.5rem;
+  border-radius:4px;
+}
+
+.reset__link,.reset__link:visited, .reset__link:link {
+  margin-top:2rem;
+  color:var(--pink);
+  text-decoration:none;
 }

@@ -2,7 +2,9 @@ class Login {
   constructor() {
     this.loginForm = document.querySelector('.login__form');
     this.forgotForm = document.querySelector('.forgot__form');
+    this.logoutButton = document.querySelector('#logout-button');
     this.loginURL = 'http://localhost:3030/api/v1/users/login';
+    this.logoutURL = 'http://localhost:3030/api/v1/users//me/logoutall';
     this.forgotURL = 'http://localhost:3030/api/v1/users/auth/forgot_password';
 
     this.init();
@@ -17,6 +19,11 @@ class Login {
     this.forgotForm.addEventListener('submit', async e => {
       e.preventDefault();
       await this.submitForgotPassword();
+    });
+
+    this.logoutButton.addEventListener('click', async e => {
+      e.preventDefault();
+      await this.submitLogout();
     });
   }
 
@@ -48,6 +55,29 @@ class Login {
     }
   }
 
+  /**
+   * logout
+   */
+  async submitLogout() {
+    try {
+      const options = {
+        method: 'POST',
+        credentials: "same-origin",
+      };
+
+      let data = await fetch(this.logoutURL, options);
+      data = await data.json();
+      // after signup up send the user to the home page
+      alert('logout successful!');
+      window.location.href = '/';
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  /**
+   * submit forgot password
+   */
   async submitForgotPassword() {
     try {
       const userData = {
