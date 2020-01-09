@@ -30,10 +30,12 @@ let whitelist;
 if (process.env.NODE_ENV === 'production') {
     whitelist = [
       // add production urls
+      "https://joeyklee-list-project.glitch.me"
     ]
 } else {
     whitelist = [
         // add development urls
+        "https://joeyklee-list-project.glitch.me"
     ]
 }
 

@@ -3,9 +3,9 @@ class Login {
     this.loginForm = document.querySelector('.login__form');
     this.forgotForm = document.querySelector('.forgot__form');
     this.logoutButton = document.querySelector('#logout-button');
-    this.loginURL = 'http://localhost:3030/api/v1/users/login';
-    this.logoutURL = 'http://localhost:3030/api/v1/users//me/logoutall';
-    this.forgotURL = 'http://localhost:3030/api/v1/users/auth/forgot_password';
+    this.loginURL = 'https://joeyklee-list-project.glitch.me/api/v1/users/login';
+    this.logoutURL = 'https://joeyklee-list-project.glitch.me/api/v1/users//me/logoutall';
+    this.forgotURL = 'https://joeyklee-list-project.glitch.me/api/v1/users/auth/forgot_password';
 
     this.init();
   }
