@@ -1,10 +1,5 @@
 window.addEventListener("DOMContentLoaded", function(){
   console.log('hello lovely human');
-
-  const main = async function(){
-    const posts = new Posts();
-
-  }
-
-  main();
+  const posts = new Posts();
+  const login = new Login();
 });

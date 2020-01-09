@@ -22,7 +22,6 @@
         <li class="nav__list__item"> <a class="link" href="/">Home</a></li>
       </ul>
       <ul class="nav__list nav__list--right">
-        <li class="nav__list__item"> <a class="link" href="/login">login</a></li>
         <li class="nav__list__item"> <a class="link" href="/signup">signup</a></li>
       </ul>
     </nav>
@@ -32,8 +31,38 @@
       * includes the h1 and subtitle
     -->
     <header class="header">
-      <h1 class="header__title">The List Project</h1>
-      <h2 class="header__subtitle">Behold! Links from across the web!</h2>
+      <section class="header__login">
+          <!-- login section -->
+          <section class="header__login__section">
+          <h3 class="login__section__title">Login</h3>
+          <form class="auth_form login__form">
+            <fieldset class="auth__form__section">
+              <legend class="auth__form__section__title">email</legend>
+              <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
+            </fieldset>
+            <fieldset class="auth__form__section">
+              <legend class="auth__form__section__title">password</legend>
+              <input class="auth__form__section__input" type="password" name="password" placeholder="e.g. super_secret_password">
+            </fieldset>
+            <input class="auth__form__section__button" type="submit" value="login">
+          </form>
+        </section>
+        <!-- forgot password -->
+        <section class="header__login__section">
+          <form class="auth_form forgot__form">
+            <fieldset class="auth__form__section">
+              <legend class="auth__form__section__title">forgot password: email</legend>
+              <input class="auth__form__section__input" type="email" name="email" placeholder="e.g. youremail@mail.com">
+            </fieldset>
+            <input class="auth__form__section__button" type="submit" value="submit password reset">
+          </form>
+        </section>
+      </section>
+      <section class="header__main">
+        <h1 class="header__title">The List Project</h1>
+        <h2 class="header__subtitle">Behold! Links from across the web!</h2>
+        <p class="header__description">The list project is user driven platform that stores links submitted by community members in one really long list by chronological order. No fancy content hoisting algorithms to be found here!</p>
+      </section>
     </header>
 
     
@@ -100,27 +129,6 @@
         <h3 class="section__view__title">· All Posts ·</h3>
         <ul class="section__view__posts">
           <!-- this is where your posts will be filled in with javascript -->
-          <!-- <li class="section__view__post">
-            <div class="section__view__post__functions">
-              <button>edit</button>
-              <button>delete</button>
-            </div>
-            <h4 class="section__view__post__title">
-              <a href="{{URL}}" target="_blank" rel="noreferrer" 
-                class="section__view__post__link section__view__post__link--large">
-                {{title with link}}
-              </a>
-            </h4>
-            <p class="section__view__post__description">
-              {{link description}}
-            </p>
-            <ul class="section__view__post__meta">
-              <li class="section__view__post__meta__section section__view__post__meta__username">Submitted by: {{name}}</li>
-              <li class="section__view__post__meta__section section__view__post__meta__link">
-                <a href="{{URL}}" class="section__view__post__link--small">{{https://itp.nyu.edu}}</a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </section>
 
@@ -130,6 +138,7 @@
     </div>
     <!-- JS Scripts -->
     <script src="js/Posts.js"></script>
+    <script src="js/Login.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
