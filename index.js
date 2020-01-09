@@ -66,10 +66,6 @@ app.get("/", (req, res) => {
   res.sendFile('/')
 })
 
-// login
-app.get("/login", (req, res) => {
-  res.sendFile(publicPath + '/login.html')
-})
 // signup
 app.get("/signup", (req, res) => {
   res.sendFile(publicPath + '/signup.html')
