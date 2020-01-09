@@ -67,6 +67,9 @@ app.get("/", (req, res) => {
   res.sendFile('/')
 })
 
+app.get("/reset_password", (req, res) => {
+  res.sendFile(publicPath + '/reset_password.html')
+})
 
 /**
 * Step 8: Set your posts routes
