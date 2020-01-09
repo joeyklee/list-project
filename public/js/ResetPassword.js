@@ -1,7 +1,7 @@
 class ResetPassword {
   constructor() {
     this.resetForm = document.querySelector('.reset__form');
-    this.resetURL = 'https://joeyklee-list-project.glitch.me/api/v1/users/auth/reset_password';
+    this.resetURL = 'http://localhost:3030/api/v1/users/auth/reset_password';
 
     this.init();
   }

@@ -3,7 +3,7 @@ class Posts {
     // posts data
     this.posts = [];
     // posts base api url
-    this.postsURL = "https://joeyklee-list-project.glitch.me/api/v1/posts";
+    this.postsURL = "http://localhost:3030/api/v1/posts";
     // query selectors
     this.postsList = document.querySelector('.posts__view__list');
     this.postEditForm = document.querySelector('.post__form-edit');

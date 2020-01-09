@@ -1,7 +1,7 @@
 class Signup {
   constructor(){
     this.signupForm = document.querySelector('.signup__form');
-    this.signupURL = "https://joeyklee-list-project.glitch.me/api/v1/users/register"
+    this.signupURL = "http://localhost:3030/api/v1/users/register"
 
     this.init();
   }
