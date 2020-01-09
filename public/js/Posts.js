@@ -5,9 +5,9 @@ class Posts {
     // posts base api url
     this.postsURL = "http://localhost:3030/api/v1/posts";
     // query selectors
-    this.postsList = document.querySelector('.posts__view__posts');
-    this.postEditForm = document.querySelector('.post__form--edit');
-    this.postNewForm = document.querySelector('.post__form--new');
+    this.postsList = document.querySelector('.posts__view__list');
+    this.postEditForm = document.querySelector('.post__form-edit');
+    this.postNewForm = document.querySelector('.post__form-new');
 
     // initialize the event listeners
     this.init();
@@ -172,36 +172,36 @@ class Posts {
    */
   createPostItem(post){
     const output = document.createElement('li');
-    output.classList.add('section__view__post');
+    output.classList.add('posts__view__list__item');
     output.innerHTML = `
-      <div class="section__view__post__functions">
-        <button class="section__view__post__button section__view__post__button--edit" data-id="${post._id}">edit</button>
-        <button class="section__view__post__button section__view__post__button--delete" data-id="${post._id}">delete</button>
+      <div class="posts__view__list__item__functions">
+        <button class="posts__view__list__item__functions__button posts__view__list__item__functions__button--edit" data-id="${post._id}">edit</button>
+        <button class="posts__view__list__item__functions__button posts__view__list__item__functions__button--delete" data-id="${post._id}">delete</button>
       </div>
-      <h4 class="section__view__post__title">
+      <h4 class="posts__view__list__item__title">
         <a href="${post.link}" target="_blank" rel="noreferrer" 
-          class="section__view__post__link section__view__post__link--large">
+          class="posts__view__list__item__title-link">
           ${post.title}
         </a>
       </h4>
-      <p class="section__view__post__description">
+      <p class="posts__view__list__item__description">
         ${post.description}
       </p>
-      <ul class="section__view__post__meta">
-        <li class="section__view__post__meta__section section__view__post__meta__username">Submitted by: ${post.createdBy_username}</li>
-        <li class="section__view__post__meta__section section__view__post__meta__link">
-          <a href="${post.link}" class="section__view__post__link--small">${post.link}</a>
+      <ul class="posts__view__list__item__meta-list">
+        <li class="posts__view__list__item__meta-list__item">Submitted by: ${post.createdBy_username}</li>
+        <li class="posts__view__list__item__meta-list__item">
+          <a class="posts__view__list__item__meta-list__item-link" href="${post.link}">${post.link}</a>
         </li>
       </ul>
     `;
 
     // listen for delete events
-    const deleteButton = output.querySelector('.section__view__post__button--delete');
+    const deleteButton = output.querySelector('.posts__view__list__item__functions__button--delete');
     deleteButton.addEventListener('click', async e =>{
       await this.handleDeletePost(e.target.dataset.id)
     });
     // listen for toggle events
-    const editButton = output.querySelector('.section__view__post__button--edit');
+    const editButton = output.querySelector('.posts__view__list__item__functions__button--edit');
     editButton.addEventListener('click', async e =>{
       this.setEditPost(e.target.dataset.id)
     });
